@@ -36,9 +36,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AlarmWorkflow.Shared">
-      <HintPath>..\..\Build\AlarmWorkflow.Shared.dll</HintPath>
-    </Reference>
     <Reference Include="AlarmWorkflow.Backend.ServiceContracts">
       <HintPath>..\..\Build\AlarmWorkflow.Backend.ServiceContracts.dll</HintPath>
     </Reference>
@@ -47,6 +44,10 @@
     </Reference>
     <Reference Include="AlarmWorkflow.BackendService.SettingsContracts">
       <HintPath>..\..\Build\AlarmWorkflow.BackendService.SettingsContracts.dll</HintPath>
+    </Reference>
+    <Reference Include="AlarmWorkflow.Shared, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Build\AlarmWorkflow.Shared.dll</HintPath>
     </Reference>
     <Reference Include="Ghostscript.NET, Version=1.2.0.0, Culture=neutral, PublicKeyToken=f85051de34525b59, processorArchitecture=MSIL">
       <HintPath>..\packages\Ghostscript.NET.1.2.0\lib\net40\Ghostscript.NET.dll</HintPath>

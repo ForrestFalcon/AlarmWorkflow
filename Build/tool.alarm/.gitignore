@@ -1,0 +1,16 @@
+
+*.dll
+*.pdb
+*.XML
+*.lastcodeanalysissucceeded
+*.xml
+*.InstallLog
+*.exe
+*.manifest
+*.bat
+*.config
+*.htm
+*.xsd
+
+/Resources
+/Scripts
