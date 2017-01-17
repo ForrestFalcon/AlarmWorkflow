@@ -2,6 +2,7 @@
 bin
 obj
 *metadata
+*mdb
 
 # Java Folders/Files
 gen

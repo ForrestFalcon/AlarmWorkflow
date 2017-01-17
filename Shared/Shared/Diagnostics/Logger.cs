@@ -216,15 +216,26 @@ namespace AlarmWorkflow.Shared.Diagnostics
 
             private static IAppender CreateConsoleAppender(string logName)
             {
-                ColoredConsoleAppender appender = new ColoredConsoleAppender();
-                appender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Debug, ForeColor = ColoredConsoleAppender.Colors.White });
-                appender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Info, ForeColor = ColoredConsoleAppender.Colors.White });
-                appender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Fine, ForeColor = ColoredConsoleAppender.Colors.White });
-                appender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Trace, ForeColor = ColoredConsoleAppender.Colors.White });
-                appender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Warn, ForeColor = ColoredConsoleAppender.Colors.Yellow });
-                appender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Error, ForeColor = ColoredConsoleAppender.Colors.Red });
-                appender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Fatal, ForeColor = ColoredConsoleAppender.Colors.Red });
-                appender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Critical, ForeColor = ColoredConsoleAppender.Colors.Red });
+                AppenderSkeleton appender;
+
+                if(Utilities.IsUnix())
+                {
+                    appender = new ConsoleAppender();
+                }
+                else
+                {
+                    ColoredConsoleAppender consoleAppender = new ColoredConsoleAppender();
+                    consoleAppender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Debug, ForeColor = ColoredConsoleAppender.Colors.White });
+                    consoleAppender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Info, ForeColor = ColoredConsoleAppender.Colors.White });
+                    consoleAppender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Fine, ForeColor = ColoredConsoleAppender.Colors.White });
+                    consoleAppender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Trace, ForeColor = ColoredConsoleAppender.Colors.White });
+                    consoleAppender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Warn, ForeColor = ColoredConsoleAppender.Colors.Yellow });
+                    consoleAppender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Error, ForeColor = ColoredConsoleAppender.Colors.Red });
+                    consoleAppender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Fatal, ForeColor = ColoredConsoleAppender.Colors.Red });
+                    consoleAppender.AddMapping(new ColoredConsoleAppender.LevelColors() { Level = Level.Critical, ForeColor = ColoredConsoleAppender.Colors.Red });
+                    appender = consoleAppender;
+                }
+
                 appender.Layout = CreateOnlyMessageLayout();
 
                 return appender;

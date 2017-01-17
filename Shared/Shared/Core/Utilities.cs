@@ -529,5 +529,14 @@ namespace AlarmWorkflow.Shared.Core
             return resman.GetString(resourceName);
         }
 
+        /// <summary>
+        /// Retrieves whether the platfrom is a Unix based OS or not.
+        /// </summary>
+        /// <returns>True if the system runs on a Unix OS.</returns>
+        public static bool IsUnix()
+        {
+            int p = (int)Environment.OSVersion.Platform;
+            return (p == 4) || (p == 6) || (p == 128);
+        }
     }
 }
