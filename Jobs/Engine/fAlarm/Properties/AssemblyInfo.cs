@@ -21,11 +21,11 @@ using AlarmWorkflow.Shared.Core;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
 
-[assembly: AssemblyTitle("AlarmWorkflow.Job.eAlarm")]
+[assembly: AssemblyTitle("AlarmWorkflow.Job.fAlarm")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("The AlarmWorkflow-Team")]
-[assembly: AssemblyProduct("AlarmWorkflow.Job.eAlarm")]
+[assembly: AssemblyProduct("AlarmWorkflow.Job.fAlarm")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -13,11 +13,25 @@ Generelles
   * Korrekturwörterbuch für E-Mail Alarmquelle
   * Optimierungen bei Druckerauswahl
   * Möglichkeit zur Selektion von bereits auf dem System installierten Druckern
-  * Setzen der Environment-Variable "TESSDATA_PREFIX" auf das AlarmWorkflow Verzeichnis (Sprachdatei des Projektes wird allen Tesseract Versionen verwendet).  * Alarmtext Widget nun flexibler und dynamischer.
+  * Setzen der Environment-Variable "TESSDATA_PREFIX" auf das AlarmWorkflow Verzeichnis (Sprachdatei des Projektes wird allen Tesseract Versionen verwendet).  
+  * Alarmtext Widget nun flexibler und dynamischer.
   * Avalon Dock Upgrade
   * Neuer Job zum Ausführen von Programmen bei Alarmeingang auf dem Server  * Pushover als weitere Pushmöglichkeit hinzugefügt -> https://pushover.net
+  * eAlarm durch fAlarm komplett abgelöst. Bitte dabei Ahang #1 beachten!
+
 Gelöste Probleme
 ----------------
 
   * Speicherung/Lesen von Geokoordinaten
   * Laden von alten Layouts in der UI
+
+Anhänge
+-------
+
+#1
+--
+Aufgrund diverser Probleme mit der App "eAlarm" wurde die von Grund auf neu entwickelt und kann aus dem Google Play Store heruntergeladen werden.
+
+Außerdem sollte die Datei "AlarmWorkflow.Job.eAlarm.dll" im Programmverzeichnis gelöscht werden, um eine Reibungslose Funktionalität zu gewährleisten. 
+
+Für Benutzer der Nightly-Builds: Nach Änderung der DLL-Datei ist dieser Job nichtmehr aktiv und muss erneut aktiviert werden! 

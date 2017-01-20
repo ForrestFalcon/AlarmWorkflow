@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlarmWorkflow.Job.eAlarm.Properties {
+namespace AlarmWorkflow.Job.fAlarm.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace AlarmWorkflow.Job.eAlarm.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AlarmWorkflow.Job.eAlarm.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AlarmWorkflow.Job.fAlarm.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -88,7 +88,7 @@ namespace AlarmWorkflow.Job.eAlarm.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error while sending eAlarm notification! The error code was &apos;{0}&apos;..
+        ///   Looks up a localized string similar to Error while sending fAlarm notification! The error code was &apos;{0}&apos;..
         /// </summary>
         internal static string ErrorSendingNotification {
             get {
@@ -97,7 +97,7 @@ namespace AlarmWorkflow.Job.eAlarm.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kommuniziert mit der eAlarm/fAlarm-Android App..
+        ///   Looks up a localized string similar to Kommuniziert mit der fAlarm-Android App..
         /// </summary>
         internal static string ExportJobDescription {
             get {
@@ -106,7 +106,7 @@ namespace AlarmWorkflow.Job.eAlarm.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to eAlarm/fAlarm.
+        ///   Looks up a localized string similar to fAlarm.
         /// </summary>
         internal static string ExportJobDisplayName {
             get {

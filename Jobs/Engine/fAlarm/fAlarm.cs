@@ -28,18 +28,17 @@ using AlarmWorkflow.BackendService.SettingsContracts;
 using AlarmWorkflow.Shared.Core;
 using AlarmWorkflow.Shared.Diagnostics;
 
-namespace AlarmWorkflow.Job.eAlarm
+namespace AlarmWorkflow.Job.fAlarm
 { //
     /// <summary>
-    /// Implements a Job that send notifications to the Android App eAlarm.
+    /// Implements a Job that send notifications to the Android App fAlarm.
     /// </summary>
-    [Export(nameof(eAlarm), typeof(IJob))]
+    [Export(nameof(fAlarm), typeof(IJob))]
     [Information(DisplayName = "ExportJobDisplayName", Description = "ExportJobDescription")]
-    class eAlarm : IJob
+    class fAlarm : IJob
     {
         #region Constants
-
-        private const string GcmApiKey = "AIzaSyA5hhPTlYxJsEDniEoW8OgfxWyiUBEPiS0";
+        
         private const string FcmApiKey = "AIzaSyB4CKxUDeYC7lU-p0pLsJSJ1kcVRv6AHWk";
 
         #endregion
@@ -53,16 +52,16 @@ namespace AlarmWorkflow.Job.eAlarm
 
         #region Enums
 
-        private enum CloudMessagingService { GCM, FCM }
+        private enum CloudMessagingService { FCM }
 
         #endregion
 
         #region Constructor
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="eAlarm" /> class.
+        /// Initializes a new instance of the <see cref="fAlarm" /> class.
         /// </summary>
-        public eAlarm()
+        public fAlarm()
         {
         }
 
@@ -85,17 +84,17 @@ namespace AlarmWorkflow.Job.eAlarm
                 return;
             }
             
-            string body = operation.ToString(_settings.GetSetting("eAlarm", "text").GetValue<string>());
-            string header = operation.ToString(_settings.GetSetting("eAlarm", "header").GetValue<string>());
+            string body = operation.ToString(_settings.GetSetting("fAlarm", "text").GetValue<string>());
+            string header = operation.ToString(_settings.GetSetting("fAlarm", "header").GetValue<string>());
             string location = operation.Einsatzort.ToString();
             string latlng = operation.Einsatzort.GeoLatLng;
             string timestamp = operation.Timestamp.ToString("s");
             string key = operation.OperationGuid.ToString();
 
-            bool encryption = _settings.GetSetting("eAlarm", "Encryption").GetValue<bool>();
+            bool encryption = _settings.GetSetting("fAlarm", "Encryption").GetValue<bool>();
             if (encryption)
             {
-                string encryptionKey = _settings.GetSetting("eAlarm", "EncryptionKey").GetValue<string>();
+                string encryptionKey = _settings.GetSetting("fAlarm", "EncryptionKey").GetValue<string>();
 
                 body = Helper.Encrypt(body, encryptionKey);
                 header = Helper.Encrypt(header, encryptionKey);
@@ -118,23 +117,13 @@ namespace AlarmWorkflow.Job.eAlarm
                 }
             };
 
-            //Send to eAlarm
-            content.registration_ids = GetRecipients(operation)
-                .Where(pushEntryObject => pushEntryObject.Consumer == "eAlarm")
-                .Select(pushEntryObject => pushEntryObject.RecipientApiKey)
-                .ToArray();
-            HttpStatusCode result = 0;
-            if (!SendNotification(CloudMessagingService.GCM, content, ref result))
-            {
-                Logger.Instance.LogFormat(LogType.Error, this, Properties.Resources.ErrorSendingNotification, result);
-            }
-
             //Send to fAlarm
             content.registration_ids = GetRecipients(operation)
                 .Where(pushEntryObject => pushEntryObject.Consumer == "fAlarm")
                 .Select(pushEntryObject => pushEntryObject.RecipientApiKey)
                 .ToArray();
-            result = 0;
+
+            HttpStatusCode result = 0;
             if (!SendNotification(CloudMessagingService.FCM, content, ref result))
             {
                 Logger.Instance.LogFormat(LogType.Error, this, Properties.Resources.ErrorSendingNotification, result);
@@ -164,11 +153,6 @@ namespace AlarmWorkflow.Job.eAlarm
 
             switch (service)
             {
-                case CloudMessagingService.GCM:
-                    url = "https://android.googleapis.com/gcm/send";
-                    apiKey = GcmApiKey;
-                    Logger.Instance.LogFormat(LogType.Debug, this, Properties.Resources.DebugSendMessage, "eAlarm", message);
-                    break;
                 case CloudMessagingService.FCM:
                     url = "https://fcm.googleapis.com/fcm/send";
                     apiKey = FcmApiKey;

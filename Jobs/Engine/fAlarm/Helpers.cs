@@ -17,7 +17,7 @@ using System;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace AlarmWorkflow.Job.eAlarm
+namespace AlarmWorkflow.Job.fAlarm
 {
     internal class Helper
     {

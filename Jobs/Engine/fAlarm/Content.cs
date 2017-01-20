@@ -14,10 +14,10 @@
 // along with AlarmWorkflow.  If not, see <http://www.gnu.org/licenses/>.
 
 
-namespace AlarmWorkflow.Job.eAlarm
+namespace AlarmWorkflow.Job.fAlarm
 {
     /// <summary>
-    /// Content of the eAlarm message.
+    /// Content of the fAlarm message.
     /// The vars have to be lowercase!
     /// </summary>
     public class Content

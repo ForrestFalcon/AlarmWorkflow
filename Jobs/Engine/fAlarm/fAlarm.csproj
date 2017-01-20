@@ -8,8 +8,8 @@
     <ProjectGuid>{79D2FA21-105A-447A-98FE-44A3FCDA4CAA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AlarmWorkflow.Job.eAlarm</RootNamespace>
-    <AssemblyName>AlarmWorkflow.Job.eAlarm</AssemblyName>
+    <RootNamespace>AlarmWorkflow.Job.fAlarm</RootNamespace>
+    <AssemblyName>AlarmWorkflow.Job.fAlarm</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Content.cs" />
-    <Compile Include="eAlarm.cs" />
+    <Compile Include="fAlarm.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

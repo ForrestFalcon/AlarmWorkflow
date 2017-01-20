@@ -127,12 +127,12 @@
     <value>The Cloud Messaging Service was not found!</value>
   </data>
   <data name="ErrorSendingNotification" xml:space="preserve">
-    <value>Error while sending eAlarm notification! The error code was '{0}'.</value>
+    <value>Error while sending fAlarm notification! The error code was '{0}'.</value>
   </data>
   <data name="ExportJobDescription" xml:space="preserve">
-    <value>Kommuniziert mit der eAlarm/fAlarm-Android App.</value>
+    <value>Kommuniziert mit der fAlarm-Android App.</value>
   </data>
   <data name="ExportJobDisplayName" xml:space="preserve">
-    <value>eAlarm/fAlarm</value>
+    <value>fAlarm</value>
   </data>
 </root>

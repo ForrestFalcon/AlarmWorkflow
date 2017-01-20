@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailing", "Mailing\Mailing.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayWakeUp", "DisplayWakeUp\DisplayWakeUp.csproj", "{D3E75ABB-8816-4E2A-B107-87C393CE96F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAlarm", "eAlarm\eAlarm.csproj", "{79D2FA21-105A-447A-98FE-44A3FCDA4CAA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fAlarm", "fAlarm\fAlarm.csproj", "{79D2FA21-105A-447A-98FE-44A3FCDA4CAA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmSourcePrinter", "AlarmSourcePrinter\AlarmSourcePrinter.csproj", "{27EE337B-3AA5-41B1-AB0B-3C114EA64105}"
 EndProject
