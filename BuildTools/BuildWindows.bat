@@ -2,7 +2,8 @@
 rem -------------------------------------------------
 rem AlarmWorkflow build script (DEBUG)
 rem -------------------------------------------------
-SET build="C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe"
+SET build="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\msbuild.exe"
+IF NOT EXIST build SET build="C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe"
 SET root=%~dp0\..
 
 echo -------------------------------------------------
