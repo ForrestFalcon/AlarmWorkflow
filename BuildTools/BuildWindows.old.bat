@@ -5,7 +5,8 @@ rem
 rem Please change "Framework64" to "Framework" in the following path
 rem if you're running this script on a x86 or 32-bit OS.
 rem -------------------------------------------------
-SET build=C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe
+SET build="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\msbuild.exe"
+IF NOT EXIST build SET build="C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe"
 SET root=%~dp0\..
 
 echo -------------------------------------------------
