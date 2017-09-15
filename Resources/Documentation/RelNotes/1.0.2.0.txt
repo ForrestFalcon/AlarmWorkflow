@@ -13,9 +13,14 @@ Generelles
   * Korrekturwörterbuch für E-Mail Alarmquelle
   * Optimierungen bei Druckerauswahl
   * Möglichkeit zur Selektion von bereits auf dem System installierten Druckern
-  * Setzen der Environment-Variable "TESSDATA_PREFIX" auf das AlarmWorkflow Verzeichnis (Sprachdatei des Projektes wird allen Tesseract Versionen verwendet).
+  * Setzen der Environment-Variable "TESSDATA_PREFIX" auf das AlarmWorkflow Verzeichnis (Sprachdatei des Projektes wird allen Tesseract Versionen verwendet).  * Alarmtext Widget nun flexibler und dynamischer.
+  * Avalon Dock Upgrade
+  * Neuer Job zum Ausführen von Programmen bei Alarmeingang auf dem Server  
+  * Pushover als weitere Pushmöglichkeit hinzugefügt -> https://pushover.net
+  * Als zusätliche Alarmquelle sind jetzt "Netzwerk-Alarme" verfürgbar
 
 Gelöste Probleme
 ----------------
 
   * Speicherung/Lesen von Geokoordinaten
+  * Laden von alten Layouts in der UI

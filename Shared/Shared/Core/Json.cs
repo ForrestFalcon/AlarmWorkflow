@@ -48,24 +48,6 @@ namespace AlarmWorkflow.Shared.Core
         /// <param name="value">The JSON-string to deserialize.</param>
         /// <param name="ignoreNullValue">Ignore all null values in the object.</param>
         /// <returns></returns>
-        public static object Deserialize(string value, bool ignoreNullValue = false)
-        {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            if (ignoreNullValue)
-            {
-                settings.NullValueHandling = NullValueHandling.Ignore;
-                settings.DefaultValueHandling = DefaultValueHandling.Ignore;
-            }
-
-            return JsonConvert.DeserializeObject(value, settings);
-        }
-
-        /// <summary>
-        /// Deserializes the given JSON-string back into an object.
-        /// </summary>
-        /// <param name="value">The JSON-string to deserialize.</param>
-        /// <param name="ignoreNullValue">Ignore all null values in the object.</param>
-        /// <returns></returns>
         public static T Deserialize<T>(string value, bool ignoreNullValue = false)
         {
             JsonSerializerSettings settings = new JsonSerializerSettings();
