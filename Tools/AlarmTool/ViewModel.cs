@@ -179,17 +179,19 @@ namespace AlarmWorkflow.Tools.Alarm
                 || String.IsNullOrEmpty(CurrentOperation.Keywords.EmergencyKeyword)
                 || String.IsNullOrEmpty(CurrentOperation.Keywords.Keyword))
             {
-                MessageBox.Show("Invalid arguments", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Invalid arguments. No EmergencyKeyword, Keyword or comment.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-            try
+            else
             {
-                Network.SendOperation(Server, createOperation());
-                MessageBox.Show("Alarm wurde gesendet!", "Send", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                try
+                {
+                    Network.SendOperation(Server, createOperation());
+                    MessageBox.Show("Alarm wurde gesendet!", "Send", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 
