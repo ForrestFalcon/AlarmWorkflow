@@ -14,6 +14,7 @@
 // along with AlarmWorkflow.  If not, see <http://www.gnu.org/licenses/>.
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace AlarmWorkflow.Shared.Core
 {
@@ -29,14 +30,25 @@ namespace AlarmWorkflow.Shared.Core
         /// </summary>
         /// <param name="value">The object to serialize.</param>
         /// <param name="ignoreNullValue">Ignore all null values in the object.</param>
+        /// <param name="useSnakeCase">Use the snake case naming strategy.</param>
         /// <returns>A string containing the JSON-serialized object instance.</returns>
-        public static string Serialize(object value, bool ignoreNullValue = false)
+        public static string Serialize(object value, bool ignoreNullValue = false, bool useSnakeCase = false)
         {
-            JsonSerializerSettings settings = new JsonSerializerSettings();
+            var settings = new JsonSerializerSettings();
             if (ignoreNullValue)
             {
                 settings.NullValueHandling = NullValueHandling.Ignore;
                 settings.DefaultValueHandling = DefaultValueHandling.Ignore;
+            }
+
+            if (useSnakeCase)
+            {
+                var contractResolver = new DefaultContractResolver
+                {
+                    NamingStrategy = new SnakeCaseNamingStrategy()
+                };
+
+                settings.ContractResolver = contractResolver;
             }
 
             return JsonConvert.SerializeObject(value, settings);

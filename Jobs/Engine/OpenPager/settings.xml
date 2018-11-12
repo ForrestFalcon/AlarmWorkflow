@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<SettingsConfiguration Version="1" Identifier="OpenPager">
+  <Setting Name="apiKey" Type="System.String"></Setting>
+  <Setting Name="apiUrl" Type="System.String">https://openpager.de</Setting>
+</SettingsConfiguration>

@@ -1,0 +1,6 @@
+﻿<SettingsDisplayConfiguration>
+  <Identifier Name="OpenPager" DisplayText="OpenPager" Parent="Aufgaben">
+    <Setting Name="apiKey" DisplayText="API Key" IsDynamic="true" Category="API"/>
+    <Setting Name="apiUrl" DisplayText="API Url" IsDynamic="true" Category="API"/>
+  </Identifier>
+</SettingsDisplayConfiguration>
